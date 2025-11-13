@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Kaydırma çubuğunun genişliği */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* Çubuğun arkasındaki 'yol' (iz) */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6b7280; /* Kaydırma çubuğunun kendisi (tutamak) (koyu gri) */
+  border-radius: 20px; /* Yuvarlak köşeler */
+  border: 2px solid transparent; /* Kenar boşluğu (opsiyonel) */
+  background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #a0aec0; /* Üzerine gelince (açık gri) */
+}
