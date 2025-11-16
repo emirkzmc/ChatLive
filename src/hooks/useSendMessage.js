@@ -7,7 +7,7 @@ export const useSendMessage = (nickname) => {
   const [message, setMessage] = useState('');
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    const trimmedMessage = message.trim(); 
+    const trimmedMessage = message.trim(); //boşlukları kaldırır
 
     if (trimmedMessage) {
       try {

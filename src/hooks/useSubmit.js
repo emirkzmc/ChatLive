@@ -1,20 +1,25 @@
-import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
 
+
 export function useSubmit(onLogin) {
-  const navigate = useNavigate();
+
   const [inputNickname, setInputNickname] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setError(null);
+    const nickname = inputNickname.trim();
 
-    if (inputNickname.trim()) {
-      onLogin(inputNickname.trim());
-      navigate("/chat");
+    if (nickname) {
+
+      onLogin(nickname);
+      
     } else {
-      alert("Lütfen bir kullanıcı adı giriniz.");
+      setError("Lütfen bir kullanıcı adı girin.");
     }
   };
 
-  return { inputNickname, setInputNickname, handleSubmit };
+  return { inputNickname, setInputNickname, handleSubmit , error };
 }
