@@ -5,7 +5,7 @@ import { useSubmit } from "../hooks/useSubmit";
 
 export default function LoginPage({ onLogin }) {
   const { inputNickname, setInputNickname, handleSubmit, error } = useSubmit(onLogin);
-
+  
 
   return (
     <>

@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSendMessage } from '../hooks/useSendMessage'
 
-export default function MessageInput({ nickname  }) {
+export default function MessageInput({ nickname , selectedUser  }) {
 
-    const {message, setMessage , handleSendMessage} = useSendMessage(nickname);
+    const {message, setMessage , handleSendMessage} = useSendMessage(nickname, selectedUser);
     return (
         <>
             <form onSubmit={handleSendMessage} className='relative w-full max-w-2xl mx-auto flex flex-row-reverse     '>
