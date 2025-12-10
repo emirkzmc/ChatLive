@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import ChatBG from "../background/ChatBG.jsx";
 import ChatWindow from "../components/ChatWindow.jsx";
 import MessageInput from "../components/MessageInput.jsx";
@@ -6,7 +6,7 @@ import { useFetchMessages } from '../hooks/useFetchMessages.js';
 import Button from '../components/Button.jsx';
 import { useUserList } from '../hooks/useUserList.js';
 import Loading from '@/components/Loading.jsx';
-import { set } from 'firebase/database';
+
 
 const formatTime = (timestamp) => {
   if (!timestamp) return 'Bilinmiyor';
@@ -20,8 +20,8 @@ export default function ChatPage({ nickname, onLogout }) {
   const [selectedUser, setSelectedUser] = useState(null);
   const { users, loadingUsers } = useUserList(nickname);
   const { messages } = useFetchMessages(nickname, selectedUser);
-  const [loading, setLoading] = useState(true);
-  const [isNotification, setIsNotification] = useState(false);
+  
+  // const [isNotification, setIsNotification] = useState(false);
 
   //   useEffect(() => {
   //     if(isNotification){
@@ -108,7 +108,7 @@ export default function ChatPage({ nickname, onLogout }) {
                       <span className="text-gray-400 text-xs">
                         {formatTime(user.lastSeen)}
                       </span>
-                      <div id='ntf' className="w-4 h-4 bg-green-500 rounded-full"></div>
+                      {/* <div id='ntf' className="w-4 h-4 bg-green-500 rounded-full"></div> */}
                     </div>
                   </div>
                 ))}
